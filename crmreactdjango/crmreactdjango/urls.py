@@ -18,11 +18,14 @@ from django.urls import path,include
 
 from rest_framework import routers                    # add this
 from customers import views  
+from django.conf.urls import url
 
-router = routers.DefaultRouter()                      # add this
+""" router = routers.DefaultRouter()                      # add this
 router.register(r'customers', views.CustomerView, 'customer')   
-
+ """
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    # path('api/', include(router.urls)),
+    url(r'^api/customers/$', views.customers_list),
+    url(r'^api/customers/(?P<pk>[0-9]+)$', views.customers_detail),
 ]
