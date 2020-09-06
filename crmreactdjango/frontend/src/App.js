@@ -3,6 +3,7 @@ import {BrowserRouter} from 'react-router-dom';
 import {Route, Link} from 'react-router-dom';
 
 import CustomersList from './CustomersList';
+import CustomerCreateUpdate from './CustomerCreateUpdate'
 import logo from './logo.svg';
 import './App.css';
 
@@ -23,8 +24,8 @@ const BaseLayout = () => (
 
     <div className="content">
       <Route path="/" exact component={CustomersList} />
-      {/* <Route path="/customer/:pk"  component={CustomerCreateUpdate} />
-      <Route path="/customer/" exact component={CustomerCreateUpdate} /> */}
+      <Route path="/customer/:pk"  component={CustomerCreateUpdate} />
+      <Route path="/customer/" exact component={CustomerCreateUpdate} />
     </div>
 
   </div>
